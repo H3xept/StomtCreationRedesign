@@ -192,7 +192,7 @@
         [_containerView addSubview:stomtView];
         _stomtView = stomtView;
         
-        NSArray* horizontalPin = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[stomtView]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(stomtView)];
+        NSArray* horizontalPin = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-12-[stomtView]-12-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(stomtView)];
         NSArray* verticalPin = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[_profileBubble]-16-[stomtView]-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(stomtView,_profileBubble)];
         
         [self.containerView addConstraints:horizontalPin];

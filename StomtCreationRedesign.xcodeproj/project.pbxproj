@@ -9,12 +9,16 @@
 /* Begin PBXBuildFile section */
 		A77944101DDE366500261CDA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A779440F1DDE366500261CDA /* main.m */; };
 		A77944131DDE366500261CDA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A77944121DDE366500261CDA /* AppDelegate.m */; };
-		A77944161DDE366500261CDA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77944151DDE366500261CDA /* ViewController.m */; };
 		A77944191DDE366500261CDA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A77944171DDE366500261CDA /* Main.storyboard */; };
 		A779441B1DDE366500261CDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A779441A1DDE366500261CDA /* Assets.xcassets */; };
 		A779441E1DDE366500261CDA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A779441C1DDE366500261CDA /* LaunchScreen.storyboard */; };
 		A77944291DDE366500261CDA /* StomtCreationRedesignTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A77944281DDE366500261CDA /* StomtCreationRedesignTests.m */; };
 		A77944341DDE366500261CDA /* StomtCreationRedesignUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A77944331DDE366500261CDA /* StomtCreationRedesignUITests.m */; };
+		A77EBBB21DDE3DC500E67D78 /* ProfileBubble.m in Sources */ = {isa = PBXBuildFile; fileRef = A77EBBAD1DDE3DC500E67D78 /* ProfileBubble.m */; };
+		A77EBBB31DDE3DC500E67D78 /* StomtCreationModal.m in Sources */ = {isa = PBXBuildFile; fileRef = A77EBBAF1DDE3DC500E67D78 /* StomtCreationModal.m */; };
+		A77EBBB41DDE3DC500E67D78 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77EBBB11DDE3DC500E67D78 /* ViewController.m */; };
+		A77EBBB71DDE44B800E67D78 /* StomtView.m in Sources */ = {isa = PBXBuildFile; fileRef = A77EBBB61DDE44B800E67D78 /* StomtView.m */; };
+		FA4B570F6AE8D5FC5CAA3F9B /* libPods-StomtCreationRedesign.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C660CC9009B2E69582CCE8 /* libPods-StomtCreationRedesign.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,12 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6AB7FD3C4EBF46C9D7F19F29 /* Pods-StomtCreationRedesign.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StomtCreationRedesign.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StomtCreationRedesign/Pods-StomtCreationRedesign.debug.xcconfig"; sourceTree = "<group>"; };
 		A779440B1DDE366500261CDA /* StomtCreationRedesign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StomtCreationRedesign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A779440F1DDE366500261CDA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A77944111DDE366500261CDA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A77944121DDE366500261CDA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A77944141DDE366500261CDA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		A77944151DDE366500261CDA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A77944181DDE366500261CDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A779441A1DDE366500261CDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A779441D1DDE366500261CDA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +54,16 @@
 		A779442F1DDE366500261CDA /* StomtCreationRedesignUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StomtCreationRedesignUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A77944331DDE366500261CDA /* StomtCreationRedesignUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StomtCreationRedesignUITests.m; sourceTree = "<group>"; };
 		A77944351DDE366500261CDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A77EBBAC1DDE3DC500E67D78 /* ProfileBubble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileBubble.h; sourceTree = "<group>"; };
+		A77EBBAD1DDE3DC500E67D78 /* ProfileBubble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileBubble.m; sourceTree = "<group>"; };
+		A77EBBAE1DDE3DC500E67D78 /* StomtCreationModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StomtCreationModal.h; sourceTree = "<group>"; };
+		A77EBBAF1DDE3DC500E67D78 /* StomtCreationModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StomtCreationModal.m; sourceTree = "<group>"; };
+		A77EBBB01DDE3DC500E67D78 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		A77EBBB11DDE3DC500E67D78 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		A77EBBB51DDE44B800E67D78 /* StomtView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StomtView.h; sourceTree = "<group>"; };
+		A77EBBB61DDE44B800E67D78 /* StomtView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StomtView.m; sourceTree = "<group>"; };
+		DC3E7CC3C7B9ED6B9A960E76 /* Pods-StomtCreationRedesign.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StomtCreationRedesign.release.xcconfig"; path = "Pods/Target Support Files/Pods-StomtCreationRedesign/Pods-StomtCreationRedesign.release.xcconfig"; sourceTree = "<group>"; };
+		F7C660CC9009B2E69582CCE8 /* libPods-StomtCreationRedesign.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StomtCreationRedesign.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA4B570F6AE8D5FC5CAA3F9B /* libPods-StomtCreationRedesign.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +92,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		038F00EB1535F26166C072B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F7C660CC9009B2E69582CCE8 /* libPods-StomtCreationRedesign.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		A77944021DDE366500261CDA = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +107,8 @@
 				A77944271DDE366500261CDA /* StomtCreationRedesignTests */,
 				A77944321DDE366500261CDA /* StomtCreationRedesignUITests */,
 				A779440C1DDE366500261CDA /* Products */,
+				F2E379C7AFF6DBE576F5E2E9 /* Pods */,
+				038F00EB1535F26166C072B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,8 +127,14 @@
 			children = (
 				A77944111DDE366500261CDA /* AppDelegate.h */,
 				A77944121DDE366500261CDA /* AppDelegate.m */,
-				A77944141DDE366500261CDA /* ViewController.h */,
-				A77944151DDE366500261CDA /* ViewController.m */,
+				A77EBBAC1DDE3DC500E67D78 /* ProfileBubble.h */,
+				A77EBBAD1DDE3DC500E67D78 /* ProfileBubble.m */,
+				A77EBBB51DDE44B800E67D78 /* StomtView.h */,
+				A77EBBB61DDE44B800E67D78 /* StomtView.m */,
+				A77EBBAE1DDE3DC500E67D78 /* StomtCreationModal.h */,
+				A77EBBAF1DDE3DC500E67D78 /* StomtCreationModal.m */,
+				A77EBBB01DDE3DC500E67D78 /* ViewController.h */,
+				A77EBBB11DDE3DC500E67D78 /* ViewController.m */,
 				A77944171DDE366500261CDA /* Main.storyboard */,
 				A779441A1DDE366500261CDA /* Assets.xcassets */,
 				A779441C1DDE366500261CDA /* LaunchScreen.storyboard */,
@@ -140,6 +170,15 @@
 			path = StomtCreationRedesignUITests;
 			sourceTree = "<group>";
 		};
+		F2E379C7AFF6DBE576F5E2E9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6AB7FD3C4EBF46C9D7F19F29 /* Pods-StomtCreationRedesign.debug.xcconfig */,
+				DC3E7CC3C7B9ED6B9A960E76 /* Pods-StomtCreationRedesign.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +186,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A77944381DDE366500261CDA /* Build configuration list for PBXNativeTarget "StomtCreationRedesign" */;
 			buildPhases = (
+				2D1ACF0F8632586C71104B5B /* [CP] Check Pods Manifest.lock */,
 				A77944071DDE366500261CDA /* Sources */,
 				A77944081DDE366500261CDA /* Frameworks */,
 				A77944091DDE366500261CDA /* Resources */,
+				F64E78BE6CBA382579B9251C /* [CP] Embed Pods Frameworks */,
+				70D74DD0578DF52F6653478F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -271,14 +313,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2D1ACF0F8632586C71104B5B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		70D74DD0578DF52F6653478F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StomtCreationRedesign/Pods-StomtCreationRedesign-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F64E78BE6CBA382579B9251C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StomtCreationRedesign/Pods-StomtCreationRedesign-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A77944071DDE366500261CDA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A77944161DDE366500261CDA /* ViewController.m in Sources */,
+				A77EBBB71DDE44B800E67D78 /* StomtView.m in Sources */,
+				A77EBBB41DDE3DC500E67D78 /* ViewController.m in Sources */,
+				A77EBBB31DDE3DC500E67D78 /* StomtCreationModal.m in Sources */,
 				A77944131DDE366500261CDA /* AppDelegate.m in Sources */,
 				A77944101DDE366500261CDA /* main.m in Sources */,
+				A77EBBB21DDE3DC500E67D78 /* ProfileBubble.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +444,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -399,6 +493,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -425,10 +520,12 @@
 		};
 		A77944391DDE366500261CDA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6AB7FD3C4EBF46C9D7F19F29 /* Pods-StomtCreationRedesign.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UCSC6R94H6;
 				INFOPLIST_FILE = StomtCreationRedesign/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.h3xept.StomtCreationRedesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -437,10 +534,12 @@
 		};
 		A779443A1DDE366500261CDA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC3E7CC3C7B9ED6B9A960E76 /* Pods-StomtCreationRedesign.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = UCSC6R94H6;
 				INFOPLIST_FILE = StomtCreationRedesign/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.h3xept.StomtCreationRedesign;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,6 +615,7 @@
 				A779443A1DDE366500261CDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A779443B1DDE366500261CDA /* Build configuration list for PBXNativeTarget "StomtCreationRedesignTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +624,7 @@
 				A779443D1DDE366500261CDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A779443E1DDE366500261CDA /* Build configuration list for PBXNativeTarget "StomtCreationRedesignUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +633,7 @@
 				A77944401DDE366500261CDA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

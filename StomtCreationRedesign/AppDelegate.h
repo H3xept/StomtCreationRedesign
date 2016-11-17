@@ -1,8 +1,8 @@
 //
 //  AppDelegate.h
-//  StomtCreationRedesign
+//  NewUX
 //
-//  Created by Leonardo Cascianelli on 17/11/2016.
+//  Created by Leonardo Cascianelli on 03/11/16.
 //  Copyright © 2016 Leonardo Cascianelli. All rights reserved.
 //
 

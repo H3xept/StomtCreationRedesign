@@ -7,6 +7,7 @@
 //
 
 #import "StomtView.h"
+#import "StomtQualifierView.h"
 
 @interface StomtView ()
 @property (nonatomic,weak) CAShapeLayer* mask;
@@ -43,6 +44,20 @@
         [self addConstraint:height];
         [self addConstraints:horizontalPin];
         [self addConstraints:verticalPin];
+    }
+    
+    if(!_likeWishView){
+        StomtQualifierView* likeWishView = [[StomtQualifierView alloc] init];
+        likeWishView.translatesAutoresizingMaskIntoConstraints = NO;
+        likeWishView.backgroundColor = [UIColor grayColor];
+        [_contentView addSubview:likeWishView];
+        _likeWishView = likeWishView;
+        
+        NSLayoutConstraint* topSpacingConstraint = [NSLayoutConstraint constraintWithItem:likeWishView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_contentView attribute:NSLayoutAttributeTop multiplier:1.0f constant:8.0f];
+        NSLayoutConstraint* leftSpacingConstraint = [NSLayoutConstraint constraintWithItem:likeWishView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:_contentView attribute:NSLayoutAttributeLeft multiplier:1.0f constant:8.0f];
+        
+        [_contentView addConstraint:topSpacingConstraint];
+        [_contentView addConstraint:leftSpacingConstraint];
     }
 }
 

@@ -18,6 +18,7 @@
 		A77EBBB31DDE3DC500E67D78 /* StomtCreationModal.m in Sources */ = {isa = PBXBuildFile; fileRef = A77EBBAF1DDE3DC500E67D78 /* StomtCreationModal.m */; };
 		A77EBBB41DDE3DC500E67D78 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A77EBBB11DDE3DC500E67D78 /* ViewController.m */; };
 		A77EBBB71DDE44B800E67D78 /* StomtView.m in Sources */ = {isa = PBXBuildFile; fileRef = A77EBBB61DDE44B800E67D78 /* StomtView.m */; };
+		A77EBBBA1DDE4F9D00E67D78 /* StomtQualifierView.m in Sources */ = {isa = PBXBuildFile; fileRef = A77EBBB91DDE4F9D00E67D78 /* StomtQualifierView.m */; };
 		FA4B570F6AE8D5FC5CAA3F9B /* libPods-StomtCreationRedesign.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F7C660CC9009B2E69582CCE8 /* libPods-StomtCreationRedesign.a */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,8 @@
 		A77EBBB11DDE3DC500E67D78 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A77EBBB51DDE44B800E67D78 /* StomtView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StomtView.h; sourceTree = "<group>"; };
 		A77EBBB61DDE44B800E67D78 /* StomtView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StomtView.m; sourceTree = "<group>"; };
+		A77EBBB81DDE4F9D00E67D78 /* StomtQualifierView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StomtQualifierView.h; sourceTree = "<group>"; };
+		A77EBBB91DDE4F9D00E67D78 /* StomtQualifierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StomtQualifierView.m; sourceTree = "<group>"; };
 		DC3E7CC3C7B9ED6B9A960E76 /* Pods-StomtCreationRedesign.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StomtCreationRedesign.release.xcconfig"; path = "Pods/Target Support Files/Pods-StomtCreationRedesign/Pods-StomtCreationRedesign.release.xcconfig"; sourceTree = "<group>"; };
 		F7C660CC9009B2E69582CCE8 /* libPods-StomtCreationRedesign.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StomtCreationRedesign.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -140,6 +143,8 @@
 				A779441C1DDE366500261CDA /* LaunchScreen.storyboard */,
 				A779441F1DDE366500261CDA /* Info.plist */,
 				A779440E1DDE366500261CDA /* Supporting Files */,
+				A77EBBB81DDE4F9D00E67D78 /* StomtQualifierView.h */,
+				A77EBBB91DDE4F9D00E67D78 /* StomtQualifierView.m */,
 			);
 			path = StomtCreationRedesign;
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 				A77EBBB41DDE3DC500E67D78 /* ViewController.m in Sources */,
 				A77EBBB31DDE3DC500E67D78 /* StomtCreationModal.m in Sources */,
 				A77944131DDE366500261CDA /* AppDelegate.m in Sources */,
+				A77EBBBA1DDE4F9D00E67D78 /* StomtQualifierView.m in Sources */,
 				A77944101DDE366500261CDA /* main.m in Sources */,
 				A77EBBB21DDE3DC500E67D78 /* ProfileBubble.m in Sources */,
 			);

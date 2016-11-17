@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+@class StomtQualifierView;
+
 @interface StomtView : UIScrollView
 @property (nonatomic,weak) UIView* contentView;
+@property (nonatomic,weak) StomtQualifierView* likeWishView;
 @end

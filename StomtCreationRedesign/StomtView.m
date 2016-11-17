@@ -8,6 +8,7 @@
 
 #import "StomtView.h"
 #import "StomtQualifierView.h"
+#import "ProfileBubble.h"
 
 @interface StomtView ()
 @property (nonatomic,weak) CAShapeLayer* mask;
@@ -58,6 +59,25 @@
         
         [_contentView addConstraint:topSpacingConstraint];
         [_contentView addConstraint:leftSpacingConstraint];
+    }
+    
+    if(!_profileBubble){
+        ProfileBubble* profileBubble = [[ProfileBubble alloc] init];
+        profileBubble.translatesAutoresizingMaskIntoConstraints = NO;
+        profileBubble.backgroundColor = [UIColor blueColor];
+        [profileBubble setupWithImage:[UIImage imageNamed:@"lol"] text:@""];
+        [_contentView addSubview:profileBubble];
+        _profileBubble = profileBubble;
+        
+        NSLayoutConstraint* topSpacingConstraint = [NSLayoutConstraint constraintWithItem:profileBubble attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_contentView attribute:NSLayoutAttributeTop multiplier:1.0f constant:8.0f];
+        NSArray* horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[_likeWishView]-[profileBubble(>=8)]-(>=8)-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_likeWishView,profileBubble)];
+        NSArray* verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[profileBubble(>=8)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(profileBubble)];
+        
+        [_contentView addConstraints:verticalConstraints];
+        [_contentView addConstraint:topSpacingConstraint];
+        [_contentView addConstraints:horizontalConstraints];
+        
+        [_profileBubble setNeedsDisplay];
     }
 }
 

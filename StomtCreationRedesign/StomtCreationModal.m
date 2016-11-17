@@ -175,7 +175,7 @@
 		
 		//There is an error ahead, i'll find time to fix it. If you start in landscape mode the spacing from top is wrong.
 		
-		NSArray* horiztonalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"[_profileBubble(>=8)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_profileBubble,_closeButton)];
+		NSArray* horiztonalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"[_profileBubble(>=8)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_profileBubble)];
 
 		NSLayoutConstraint* verticalSpacing = [NSLayoutConstraint constraintWithItem:_profileBubble attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_containerView attribute:NSLayoutAttributeTop multiplier:1.0f constant:20.0f+16.0f];
 		NSLayoutConstraint* horizontalSpacing = [NSLayoutConstraint constraintWithItem:_profileBubble attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.containerView attribute:NSLayoutAttributeLeft multiplier:1.0f constant:16.0f];

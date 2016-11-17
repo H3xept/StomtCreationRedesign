@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class StomtQualifierView;
+@class StomtQualifierView,ProfileBubble;
 
 @interface StomtView : UIScrollView
 @property (nonatomic,weak) UIView* contentView;
 @property (nonatomic,weak) StomtQualifierView* likeWishView;
+@property (nonatomic,weak) ProfileBubble* profileBubble;
 @end

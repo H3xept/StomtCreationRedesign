@@ -15,6 +15,10 @@
 @interface StomtQualifierView ()
 @property (nonatomic) kSTObjectQualifier type;
 @property (nonatomic) BOOL wishOnFront;
+@property (nonatomic,weak) NSLayoutConstraint* frontBubbleBotSpacing;
+@property (nonatomic,weak) NSLayoutConstraint* frontBubbleLeftSpacing;
+@property (nonatomic,weak) NSLayoutConstraint* backBubbleBotSpacing;
+@property (nonatomic,weak) NSLayoutConstraint* backBubbleLeftSpacing;
 @end
 
 @implementation StomtQualifierView
@@ -68,7 +72,8 @@
         ProfileBubble* likeBubble = [[ProfileBubble alloc] init];
         likeBubble.translatesAutoresizingMaskIntoConstraints = NO;
         likeBubble.backgroundColor = backColour;
-        [likeBubble setupWithImage:[UIImage imageNamed:@"lol"] text:backString secondaryImage:nil];
+        [likeBubble setupWithImage:[UIImage imageNamed:@"lol"] text:backString secondaryImage:secondaryImage];
+        [likeBubble showSecondaryView:NO];
         likeBubble.label.backgroundColor = backColour;
         likeBubble.label.textColor = [UIColor whiteColor];
         [self addSubview:likeBubble];
@@ -99,7 +104,45 @@
         [self addConstraint:wishBubbleLeftMargin];
         [self addConstraint:likeBubbleBotMargin];
         [self addConstraint:likeBubbleLeftMargin];
+        
+        _frontBubbleBotSpacing = wishBubbleBotMargin;
+        _frontBubbleLeftSpacing = wishBubbleLeftMargin;
+        _backBubbleBotSpacing = likeBubbleBotMargin;
+        _backBubbleLeftSpacing = likeBubbleLeftMargin;
     }
+}
+
+- (void)switchType
+{
+    [self exchangeSubviewAtIndex:1 withSubviewAtIndex:0];
+    
+    _wishOnFront = (_wishOnFront) ? NO : YES;
+    
+    kSTObjectQualifier newType = (_type == kSTObjectWish) ? kSTObjectLike : kSTObjectWish;
+    _type = newType;
+    
+    ProfileBubble* frontBubble = (_wishOnFront) ? _wishBubble : _likeBubble;
+    ProfileBubble* backBubble = (_wishOnFront) ? _likeBubble : _wishBubble;
+    
+    [backBubble showSecondaryView:NO];
+    [frontBubble showSecondaryView:YES];
+    
+    [self layoutIfNeeded];
+    
+    CGFloat frontBubbleBotSpacing = _frontBubbleBotSpacing.constant;
+    CGFloat frontBubbleLeftSpacing = _frontBubbleLeftSpacing.constant;
+    CGFloat backBubbleLeftSpacing = _backBubbleLeftSpacing.constant;
+    CGFloat backBubbleBotSpacing = _backBubbleBotSpacing.constant;
+    
+    _backBubbleLeftSpacing.constant = frontBubbleLeftSpacing;
+    _backBubbleBotSpacing.constant = frontBubbleBotSpacing;
+    _frontBubbleLeftSpacing.constant = backBubbleLeftSpacing;
+    _frontBubbleBotSpacing.constant = backBubbleBotSpacing;
+    
+    [UIView animateWithDuration:.2f animations:^{
+        [self layoutIfNeeded];
+    }];
+    
 }
 
 - (CGSize)intrinsicContentSize
@@ -107,4 +150,8 @@
     return [StomtQualifierView predictedSize];
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self switchType];
+}
 @end

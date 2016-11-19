@@ -16,4 +16,5 @@
 @property (nonatomic,weak) ProfileBubble* wishBubble;
 + (CGSize)predictedSize;
 - (instancetype)initWithType:(kSTObjectQualifier)type;
+- (void)switchType;
 @end

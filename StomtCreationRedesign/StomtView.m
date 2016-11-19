@@ -54,8 +54,8 @@
         [_contentView addSubview:likeWishView];
         _likeWishView = likeWishView;
         
-        NSLayoutConstraint* topSpacingConstraint = [NSLayoutConstraint constraintWithItem:likeWishView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_contentView attribute:NSLayoutAttributeTop multiplier:1.0f constant:8.0f];
-        NSLayoutConstraint* leftSpacingConstraint = [NSLayoutConstraint constraintWithItem:likeWishView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:_contentView attribute:NSLayoutAttributeLeft multiplier:1.0f constant:8.0f];
+        NSLayoutConstraint* topSpacingConstraint = [NSLayoutConstraint constraintWithItem:likeWishView attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_contentView attribute:NSLayoutAttributeTop multiplier:1.0f constant:12.0f];
+        NSLayoutConstraint* leftSpacingConstraint = [NSLayoutConstraint constraintWithItem:likeWishView attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:_contentView attribute:NSLayoutAttributeLeft multiplier:1.0f constant:12.0f];
         
         [_contentView addConstraint:topSpacingConstraint];
         [_contentView addConstraint:leftSpacingConstraint];
@@ -73,7 +73,7 @@
         _profileBubble = profileBubble;
         
         NSLayoutConstraint* midEqualToLikeWishViewConstraint = [NSLayoutConstraint constraintWithItem:profileBubble attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:_likeWishView attribute:NSLayoutAttributeCenterY multiplier:1.0f constant:.0f];
-        NSArray* horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[_likeWishView]-[profileBubble(>=8)]-(>=8)-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_likeWishView,profileBubble)];
+        NSArray* horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[_likeWishView]-12-[profileBubble(>=8)]-(>=12)-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_likeWishView,profileBubble)];
         NSArray* verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[profileBubble(>=8)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(profileBubble)];
         
         [_contentView addConstraints:verticalConstraints];

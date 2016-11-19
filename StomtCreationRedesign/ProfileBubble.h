@@ -15,4 +15,5 @@
 @property (nonatomic) BOOL displayMainImage;
 @property (nonatomic) BOOL displaySecondaryImage;
 - (void)setupWithImage:(UIImage*)image text:(NSString*)text secondaryImage:(UIImage*)secondaryImage;
+- (void)showSecondaryView:(BOOL)show;
 @end

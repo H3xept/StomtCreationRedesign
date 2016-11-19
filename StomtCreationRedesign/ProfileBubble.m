@@ -162,6 +162,12 @@
     }
 }
 
+- (void)showSecondaryView:(BOOL)show
+{
+    _displaySecondaryImage = show;
+    _secondaryImage.alpha = (show) ? 1.0f : .0f;
+    _labelConstraintRightSpacing.constant = (show && _secondaryImage) ? -labelRightSpacing-18.0f : -labelRightSpacing;
+}
 
 - (CGSize)intrinsicContentSize
 {

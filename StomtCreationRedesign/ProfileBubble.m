@@ -102,17 +102,19 @@
     
     if(!self->viewsHaveBeenRounded){
         
-        CGFloat labelPredictedWidth = [self labelPredictedWidthWithSpacing:YES];
-        if(labelPredictedWidth == .0f) labelPredictedWidth += 2.0f;
-        CGFloat predictedWidth = 2.0f + _imageView.frame.size.width + labelPredictedWidth;
+//        CGFloat labelPredictedWidth = [self labelPredictedWidthWithSpacing:YES];
+//        if(labelPredictedWidth == .0f) labelPredictedWidth += 2.0f;
+//        CGFloat predictedWidth = 2.0f + _imageView.frame.size.width + labelPredictedWidth;
+//        
+//        UIBezierPath* roundPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, predictedWidth, self.frame.size.height) byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(ceilf(self.frame.size.height/2), ceilf(self.frame.size.height/2))];
+//        
+//        CAShapeLayer* maskLayer = [CAShapeLayer layer];
+//        maskLayer.path = roundPath.CGPath;
+//        self.layer.mask = maskLayer;
+//        
+//        self->roundMask = maskLayer;
         
-        UIBezierPath* roundPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, predictedWidth, self.frame.size.height) byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(ceilf(self.frame.size.height/2), ceilf(self.frame.size.height/2))];
-        
-        CAShapeLayer* maskLayer = [CAShapeLayer layer];
-        maskLayer.path = roundPath.CGPath;
-        self.layer.mask = maskLayer;
-        
-        self->roundMask = maskLayer;
+        self.layer.cornerRadius = (_imageView.frame.size.height+4)/2;
         
         UIBezierPath* imageRoundPath = [UIBezierPath bezierPathWithRoundedRect:_imageView.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(_imageView.frame.size.height/2, _imageView.frame.size.height/2)];
         

@@ -38,7 +38,7 @@
         NSArray* horizontalPin = [NSLayoutConstraint constraintsWithVisualFormat:@"H:|[contentView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(contentView)];
         NSArray* verticalPin = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|[contentView]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(contentView)];
         
-        NSLayoutConstraint* width = [NSLayoutConstraint constraintWithItem:contentView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1.0f constant:.0f];
+        NSLayoutConstraint* width = [NSLayoutConstraint constraintWithItem:contentView attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeWidth multiplier:1.0f constant:.0f];
         NSLayoutConstraint* height = [NSLayoutConstraint constraintWithItem:contentView attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationGreaterThanOrEqual toItem:self attribute:NSLayoutAttributeHeight multiplier:1.0f constant:50.0f];
         
         [self addConstraint:width];
@@ -64,17 +64,19 @@
     if(!_profileBubble){
         ProfileBubble* profileBubble = [[ProfileBubble alloc] init];
         profileBubble.translatesAutoresizingMaskIntoConstraints = NO;
-        profileBubble.backgroundColor = [UIColor blueColor];
-        [profileBubble setupWithImage:[UIImage imageNamed:@"lol"] text:@""];
+        profileBubble.backgroundColor = [UIColor whiteColor];
+        profileBubble.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        profileBubble.layer.borderWidth = 1.0f;
+        [profileBubble setupWithImage:[UIImage imageNamed:@"lol"] text:@"UFO PORNOOOOOOOOOOOO"];
         [_contentView addSubview:profileBubble];
         _profileBubble = profileBubble;
         
-        NSLayoutConstraint* topSpacingConstraint = [NSLayoutConstraint constraintWithItem:profileBubble attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:_contentView attribute:NSLayoutAttributeTop multiplier:1.0f constant:8.0f];
+        NSLayoutConstraint* midEqualToLikeWishViewConstraint = [NSLayoutConstraint constraintWithItem:profileBubble attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:_likeWishView attribute:NSLayoutAttributeCenterY multiplier:1.0f constant:.0f];
         NSArray* horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"H:[_likeWishView]-[profileBubble(>=8)]-(>=8)-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(_likeWishView,profileBubble)];
         NSArray* verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:[profileBubble(>=8)]" options:0 metrics:nil views:NSDictionaryOfVariableBindings(profileBubble)];
         
         [_contentView addConstraints:verticalConstraints];
-        [_contentView addConstraint:topSpacingConstraint];
+        [_contentView addConstraint:midEqualToLikeWishViewConstraint];
         [_contentView addConstraints:horizontalConstraints];
         
         [_profileBubble setNeedsDisplay];

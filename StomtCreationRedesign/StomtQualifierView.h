@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Stomt.h"
+
 @class ProfileBubble;
 
 @interface StomtQualifierView : UIView
 @property (nonatomic,weak) ProfileBubble* likeBubble;
 @property (nonatomic,weak) ProfileBubble* wishBubble;
 + (CGSize)predictedSize;
+- (instancetype)initWithType:(kSTObjectQualifier)type;
 @end

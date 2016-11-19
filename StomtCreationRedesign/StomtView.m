@@ -48,7 +48,7 @@
     }
     
     if(!_likeWishView){
-        StomtQualifierView* likeWishView = [[StomtQualifierView alloc] init];
+        StomtQualifierView* likeWishView = [[StomtQualifierView alloc] initWithType:kSTObjectWish];
         likeWishView.translatesAutoresizingMaskIntoConstraints = NO;
         likeWishView.backgroundColor = [UIColor whiteColor];
         [_contentView addSubview:likeWishView];

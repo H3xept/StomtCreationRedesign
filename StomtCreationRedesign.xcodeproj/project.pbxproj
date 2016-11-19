@@ -107,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				A779440D1DDE366500261CDA /* StomtCreationRedesign */,
-				A77944271DDE366500261CDA /* StomtCreationRedesignTests */,
 				A77944321DDE366500261CDA /* StomtCreationRedesignUITests */,
 				A779440C1DDE366500261CDA /* Products */,
 				F2E379C7AFF6DBE576F5E2E9 /* Pods */,
@@ -164,11 +163,12 @@
 				A779442A1DDE366500261CDA /* Info.plist */,
 			);
 			path = StomtCreationRedesignTests;
-			sourceTree = "<group>";
+			sourceTree = SOURCE_ROOT;
 		};
 		A77944321DDE366500261CDA /* StomtCreationRedesignUITests */ = {
 			isa = PBXGroup;
 			children = (
+				A77944271DDE366500261CDA /* StomtCreationRedesignTests */,
 				A77944331DDE366500261CDA /* StomtCreationRedesignUITests.m */,
 				A77944351DDE366500261CDA /* Info.plist */,
 			);

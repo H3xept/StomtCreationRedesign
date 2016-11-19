@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class ProfileBubble;
 
 @interface StomtQualifierView : UIView
+@property (nonatomic,weak) ProfileBubble* likeBubble;
+@property (nonatomic,weak) ProfileBubble* wishBubble;
 + (CGSize)predictedSize;
 @end

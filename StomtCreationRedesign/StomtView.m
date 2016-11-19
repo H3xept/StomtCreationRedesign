@@ -50,7 +50,7 @@
     if(!_likeWishView){
         StomtQualifierView* likeWishView = [[StomtQualifierView alloc] init];
         likeWishView.translatesAutoresizingMaskIntoConstraints = NO;
-        likeWishView.backgroundColor = [UIColor grayColor];
+        likeWishView.backgroundColor = [UIColor whiteColor];
         [_contentView addSubview:likeWishView];
         _likeWishView = likeWishView;
         
@@ -67,8 +67,6 @@
         profileBubble.backgroundColor = [UIColor whiteColor];
         profileBubble.layer.borderColor = [UIColor lightGrayColor].CGColor;
         profileBubble.layer.borderWidth = 1.0f;
-        profileBubble.displaySecondaryImage = NO;
-        profileBubble.displayMainImage = NO;
         [profileBubble setupWithImage:nil text:@"UFO PORNOOOOOOOOOOOO" secondaryImage:nil];
         
         [_contentView addSubview:profileBubble];

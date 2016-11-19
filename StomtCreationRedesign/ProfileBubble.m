@@ -79,7 +79,7 @@
 		
         if(_secondaryImage){
             NSLayoutConstraint* secondaryImageVerticalCenter = [NSLayoutConstraint constraintWithItem:_secondaryImage attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1.0f constant:.0f];
-            NSLayoutConstraint* secondaryImageHeightConstraint = [NSLayoutConstraint constraintWithItem:_secondaryImage attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:24.0f];
+            NSLayoutConstraint* secondaryImageHeightConstraint = [NSLayoutConstraint constraintWithItem:_secondaryImage attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:20.0f];
             NSLayoutConstraint* secondaryImageAspectRatio = [NSLayoutConstraint constraintWithItem:_secondaryImage attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:_secondaryImage attribute:NSLayoutAttributeHeight multiplier:1.0f constant:.0f];
             NSLayoutConstraint* secondaryImageRightSpacing = [NSLayoutConstraint constraintWithItem:_secondaryImage attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1.0f constant:-8.0f];
             
@@ -90,7 +90,7 @@
         }
         
         id secondObject = (_secondaryImage) ? _secondaryImage : self;
-        CGFloat spacing = (secondObject == _secondaryImage) ? 20.0f : .0f;
+        CGFloat spacing = (secondObject == _secondaryImage) ? 18.0f : .0f;
         
 		NSLayoutConstraint* spacingFromImage = [NSLayoutConstraint constraintWithItem:_label attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:_imageView attribute:NSLayoutAttributeRight multiplier:1.0f constant:labelLeftSpacing];
 		NSLayoutConstraint* rightSpacing = [NSLayoutConstraint constraintWithItem:_label attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:secondObject attribute:NSLayoutAttributeTrailing multiplier:1.0f constant:-labelRightSpacing-spacing];

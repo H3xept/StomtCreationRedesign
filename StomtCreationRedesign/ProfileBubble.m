@@ -15,7 +15,7 @@
 	BOOL labelConstraintsHaveBeenSetup;
 }
 
-#define labelLeftSpacing 6.0f
+#define labelLeftSpacing 8.0f
 #define labelRightSpacing 8.0f
 
 @property (nonatomic,weak) NSLayoutConstraint* labelConstraintLeftSpacing;
@@ -32,11 +32,13 @@
 	if((self = [super init]))
 	{
 		self.backgroundColor = [UIColor whiteColor];
+        _displayMainImage = YES;
+        _displaySecondaryImage = YES;
 	}
 	return self;
 }
 
-- (void)setupWithImage:(UIImage*)image text:(NSString*)text
+- (void)setupWithImage:(UIImage*)image text:(NSString*)text secondaryImage:(UIImage*)secondaryImage
 {
 	//Need to add placeholder
 	
@@ -46,7 +48,7 @@
 		[self addSubview:imageView];
 		_imageView = imageView;
 	}
-	_imageView.image = (image) ? image : [UIImage new];
+	_imageView.image = (image) ? image : [UIImage new]; //nil set image easy
 	
 	if(!_label){
 		UILabel* label = [[UILabel alloc] init];
@@ -59,6 +61,15 @@
 	}
 	_label.text = (text && ![text isEqualToString:@""]) ? text : @"Anonymous. Login?";
 	
+    if(!_secondaryImage && _displaySecondaryImage && secondaryImage){
+        UIImageView* secondaryImage = [[UIImageView alloc] init];
+        secondaryImage.translatesAutoresizingMaskIntoConstraints = NO;
+        secondaryImage.backgroundColor = [UIColor whiteColor];
+        [self addSubview:secondaryImage];
+        _secondaryImage = secondaryImage;
+    }
+    _secondaryImage.image = secondaryImage;
+    
 	[self loadLabelConstraints];
 }
 
@@ -66,8 +77,23 @@
 {
 	if(!self->labelConstraintsHaveBeenSetup){
 		
+        if(_secondaryImage){
+            NSLayoutConstraint* secondaryImageVerticalCenter = [NSLayoutConstraint constraintWithItem:_secondaryImage attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1.0f constant:.0f];
+            NSLayoutConstraint* secondaryImageHeightConstraint = [NSLayoutConstraint constraintWithItem:_secondaryImage attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0f constant:24.0f];
+            NSLayoutConstraint* secondaryImageAspectRatio = [NSLayoutConstraint constraintWithItem:_secondaryImage attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:_secondaryImage attribute:NSLayoutAttributeHeight multiplier:1.0f constant:.0f];
+            NSLayoutConstraint* secondaryImageRightSpacing = [NSLayoutConstraint constraintWithItem:_secondaryImage attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1.0f constant:-8.0f];
+            
+            [self addConstraint:secondaryImageVerticalCenter];
+            [self addConstraint:secondaryImageRightSpacing];
+            [self addConstraint:secondaryImageHeightConstraint];
+            [_secondaryImage addConstraint:secondaryImageAspectRatio];
+        }
+        
+        id secondObject = (_secondaryImage) ? _secondaryImage : self;
+        CGFloat spacing = (secondObject == _secondaryImage) ? 20.0f : .0f;
+        
 		NSLayoutConstraint* spacingFromImage = [NSLayoutConstraint constraintWithItem:_label attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:_imageView attribute:NSLayoutAttributeRight multiplier:1.0f constant:labelLeftSpacing];
-		NSLayoutConstraint* rightSpacing = [NSLayoutConstraint constraintWithItem:_label attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeTrailing multiplier:1.0f constant:-labelRightSpacing];
+		NSLayoutConstraint* rightSpacing = [NSLayoutConstraint constraintWithItem:_label attribute:NSLayoutAttributeTrailing relatedBy:NSLayoutRelationEqual toItem:secondObject attribute:NSLayoutAttributeTrailing multiplier:1.0f constant:-labelRightSpacing-spacing];
 		
 		NSLayoutConstraint* verticalCenter = [NSLayoutConstraint constraintWithItem:_label attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self attribute:NSLayoutAttributeCenterY multiplier:1.0f constant:.0f];
 		
@@ -98,7 +124,10 @@
 
 - (void)layoutSubviews
 {
-    _imageView.frame = CGRectMake(2, 2, self.bounds.size.height-4, self.bounds.size.height-4);
+    CGFloat height = (_displayMainImage && _imageView) ? self.bounds.size.height-4 : .0f;
+    CGFloat width = height;
+    
+    _imageView.frame = CGRectMake(2, 2, height, width);
     
     if(!self->viewsHaveBeenRounded){
         
@@ -114,7 +143,7 @@
 //        
 //        self->roundMask = maskLayer;
         
-        self.layer.cornerRadius = (_imageView.frame.size.height+4)/2;
+        self.layer.cornerRadius = (self.bounds.size.height)/2;
         
         UIBezierPath* imageRoundPath = [UIBezierPath bezierPathWithRoundedRect:_imageView.bounds byRoundingCorners:UIRectCornerAllCorners cornerRadii:CGSizeMake(_imageView.frame.size.height/2, _imageView.frame.size.height/2)];
         
@@ -123,6 +152,11 @@
         _imageView.layer.mask = imageMaskLayer;
         
         self->imageMask = imageMaskLayer;
+        
+        //Secondary image
+        
+        _secondaryImage.layer.masksToBounds = YES;
+        _secondaryImage.layer.cornerRadius = 12.0f;
         
         self->viewsHaveBeenRounded = YES;
     }

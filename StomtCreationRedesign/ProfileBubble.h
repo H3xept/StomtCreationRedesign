@@ -10,7 +10,9 @@
 
 @interface ProfileBubble : UIView
 @property (nonatomic,weak) UIImageView* imageView;
+@property (nonatomic,weak) UIImageView* secondaryImage;
 @property (nonatomic,weak) UILabel* label;
-
-- (void)setupWithImage:(UIImage*)image text:(NSString*)text;
+@property (nonatomic) BOOL displayMainImage;
+@property (nonatomic) BOOL displaySecondaryImage;
+- (void)setupWithImage:(UIImage*)image text:(NSString*)text secondaryImage:(UIImage*)secondaryImage;
 @end

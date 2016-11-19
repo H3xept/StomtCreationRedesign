@@ -167,7 +167,7 @@
 		_profileBubble = profileBubble;
 		
 #warning image download
-		[profileBubble setupWithImage:[UIImage imageNamed:@"lol"] text:@""];
+		[profileBubble setupWithImage:[UIImage imageNamed:@"lol"] text:@"" secondaryImage:nil];
 		
 		// ========================
 		// Boring Constraints

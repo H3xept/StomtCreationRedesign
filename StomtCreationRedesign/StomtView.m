@@ -67,7 +67,10 @@
         profileBubble.backgroundColor = [UIColor whiteColor];
         profileBubble.layer.borderColor = [UIColor lightGrayColor].CGColor;
         profileBubble.layer.borderWidth = 1.0f;
-        [profileBubble setupWithImage:[UIImage imageNamed:@"lol"] text:@"UFO PORNOOOOOOOOOOOO"];
+        profileBubble.displaySecondaryImage = NO;
+        profileBubble.displayMainImage = NO;
+        [profileBubble setupWithImage:nil text:@"UFO PORNOOOOOOOOOOOO" secondaryImage:nil];
+        
         [_contentView addSubview:profileBubble];
         _profileBubble = profileBubble;
         
